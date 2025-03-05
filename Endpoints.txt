@@ -1,0 +1,42 @@
+ 📌 CRUD Operations Breakdown  
+✅ Users (Only Admin can manage)  
+✅ Products (Admins & Managers can manage)  
+✅ Categories (Admins & Managers can manage)  
+
+---
+
+ 🛠 CRUD for Each Entity
+ 1️⃣ Users
+| Method | Endpoint          | Description            | Roles Allowed |
+|--------|------------------|------------------------|--------------|
+| GET    | `/users`         | Get all users         | Admin |
+| GET    | `/users/:id`     | Get a single user     | Admin |
+| POST   | `/users`         | Create a user        | Admin |
+| PUT    | `/users/:id`     | Update a user        | Admin |
+| DELETE | `/users/:id`     | Delete a user        | Admin |
+
+ 2️⃣ Products
+| Method | Endpoint           | Description              | Roles Allowed |
+|--------|-------------------|--------------------------|--------------|
+| GET    | `/products`       | Get all products        | All Users |
+| GET    | `/products/:id`   | Get a single product    | All Users |
+| POST   | `/products`       | Create a new product    | Admin, Manager |
+| PUT    | `/products/:id`   | Update a product        | Admin, Manager |
+| DELETE | `/products/:id`   | Delete a product        | Admin |
+
+ 3️⃣ Categories
+| Method | Endpoint           | Description              | Roles Allowed |
+|--------|-------------------|--------------------------|--------------|
+| GET    | `/categories`     | Get all categories      | All Users |
+| GET    | `/categories/:id` | Get a single category   | All Users |
+| POST   | `/categories`     | Create a new category   | Admin, Manager |
+| PUT    | `/categories/:id` | Update a category      | Admin, Manager |
+| DELETE | `/categories/:id` | Delete a category      | Admin |
+
+---
+
+ 🔥 Additional Features
+- ✅ Role-based Access Control (RBAC) using Guards & Decorators.  
+- ✅ Authentication (JWT for securing API).  
+- ✅ Pagination & Filtering (for large product lists).  
+- ✅ Soft Delete (optional, if you want to keep records instead of hard delete).  

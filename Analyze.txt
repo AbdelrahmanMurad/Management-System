@@ -1,0 +1,38 @@
+✅ 1. Define Core Entities (Products & Categories)
+- This is correct—start with the core tables.
+- Define relationships (One-to-Many or Many-to-Many) between `products` and `categories`.
+
+✅ 2. Establish User Roles (Admin, Manager, User)
+- Instead of creating separate entities for Admin, Manager, and User, consider using a single `users` table with a role field (`enum: admin, manager, user`).  
+- This avoids duplicate CRUD logic for different roles.
+
+  Example User Roles Approach:
+  - Admin → Can manage everything.
+  - Manager → Can manage products & categories.
+  - User → Can view products.
+
+✅ 3. CRUD Operations for Core Entities
+- Absolutely necessary!
+- CRUD operations should be role-based, meaning:
+  - Users can only view.
+  - Managers can create/update/delete products & categories.
+  - Admins can manage everything.
+
+---
+
+ 🔥 Revised Plan
+✅1️⃣ Create `products` and `categories` entities. 
+✅2️⃣ Define relationships between them (One-to-Many).
+✅* Test Connection
+✅* push to repo
+
+3️⃣ Create a `users` entity with roles (`admin, manager, user`).  
+4️⃣ Implement role-based authentication & authorization.  
+* Test Connection
+* push to repo
+
+5️⃣ Build CRUD operations for `products` and `categories`, with role-based access control.  
+6️⃣ Restrict manager access to only managing products & categories.  
+7️⃣ Admin has full control over everything (including users).  
+* Test Connection
+* push to repo
